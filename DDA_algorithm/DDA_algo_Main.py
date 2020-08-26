@@ -1,6 +1,5 @@
 from decimal import Decimal, ROUND_HALF_UP  # for proper number rounding operation
 from DDA_algorithm.TableIt import TableIt   # table generation
-import numpy as np
 import matplotlib.pyplot as plt
 
 
@@ -26,7 +25,7 @@ def dda(x1, y1, x2, y2):
 
     # Graph axis details
     plt.axis([x1-5, x2+5, y1-5, y2+5])
-    plt.scatter(x1, y1)
+    plt.scatter(x1, y1, label="start")
     plt.scatter(x2, y2)
 
     for i in range(steps):
