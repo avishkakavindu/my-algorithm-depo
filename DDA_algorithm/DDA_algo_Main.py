@@ -3,6 +3,7 @@ from DDA_algorithm.TableIt import TableIt  # table generation
 import matplotlib.pyplot as plt  # graph
 
 
+
 def dda(x1, y1, x2, y2):
     tbl = [["Steps", "x", "y"], [1, x1, y1]]  # list containing table data
 
@@ -46,7 +47,11 @@ def dda(x1, y1, x2, y2):
     plt.show()
 
 
-x1, y1 = map(int, input('Enter coordinates for Staring point(x,y): ').strip().split(','))
-x2, y2 = map(int, input('Enter coordinates for Ending point(x,y): ').strip().split(','))
+while True:
+    try:
+        x1, y1 = map(int, input('Enter coordinates for Staring point(x,y): ').strip().split(','))
+        x2, y2 = map(int, input('Enter coordinates for Ending point(x,y): ').strip().split(','))
 
-dda(x1, y1, x2, y2)
+        dda(x1, y1, x2, y2)
+    except Exception as e:
+        print("Oops! ('_')\n\t", e.__class__, "Occurred...\nPlease Retry! (^.^)")
