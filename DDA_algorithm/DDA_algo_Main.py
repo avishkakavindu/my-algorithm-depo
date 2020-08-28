@@ -3,9 +3,9 @@ from DDA_algorithm.TableIt import TableIt  # table generation
 import matplotlib.pyplot as plt  # graph
 
 
-
 def dda(x1, y1, x2, y2):
-    tbl = [["Steps", "x", "y"], [1, x1, y1]]  # list containing table data
+    tbl = [["Steps", "x", "y"],
+           [1, x1, y1]]  # list containing table data
 
     # x and y coordinates difference
     dx = x2 - x1
@@ -31,8 +31,12 @@ def dda(x1, y1, x2, y2):
 
     # Graph axis details
     plt.axis([0, x2 + 10, 0, y2 + 10])
-    plt.scatter(x1, y1)  # mark the starting point on graph
-    plt.scatter(x2, y2)  # mark the ending point on graph
+    # labeled axises
+    plt.ylabel('y-axis')
+    plt.xlabel('x-axis')
+
+    plt.scatter(x1, y1, color='green')  # mark the starting point on graph
+    plt.scatter(x2, y2, color='red')  # mark the ending point on graph
 
     for i in range(steps):
         x1 += xinc
